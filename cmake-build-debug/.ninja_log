@@ -1,0 +1,15 @@
+# ninja log v5
+0	99	7299655894234256	prj.test/CMakeFiles/test_complex.dir/test_complex.cpp.obj	deee24a7e6ff7497
+6	113	7299655894376844	prj.lab/complex/CMakeFiles/complex.dir/complex.cpp.obj	1a61898359fffe17
+113	299	7299655896223732	prj.lab/complex/libcomplex.a	57a467b78047ffe
+299	435	7299655897552031	C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/bin.dbg/test_complex.exe	47a34872e8d1909f
+2	367	7299656229023441	prj.test/CMakeFiles/test_complex.dir/test_complex.cpp.obj	deee24a7e6ff7497
+368	463	7299656229937537	C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/bin.dbg/test_complex.exe	47a34872e8d1909f
+3	104	7299657159050980	prj.lab/complex/CMakeFiles/complex.dir/complex.cpp.obj	1a61898359fffe17
+105	182	7299657159824552	prj.lab/complex/libcomplex.a	57a467b78047ffe
+3	99	7299657990982454	prj.lab/complex/CMakeFiles/complex.dir/complex.cpp.obj	1a61898359fffe17
+100	172	7299657991700319	prj.lab/complex/libcomplex.a	57a467b78047ffe
+172	259	7299657992516450	C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/bin.dbg/test_complex.exe	47a34872e8d1909f
+3	102	7299664528018814	prj.lab/complex/CMakeFiles/complex.dir/complex.cpp.obj	1a61898359fffe17
+103	178	7299664528779894	prj.lab/complex/libcomplex.a	57a467b78047ffe
+178	267	7299664529592181	C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/bin.dbg/test_complex.exe	47a34872e8d1909f
