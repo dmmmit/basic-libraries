@@ -123,7 +123,8 @@ struct Complex {
 
 //! \brief Форматированный вввод в потока ostrm комплексного числа \se Complex::write_to.
 inline std::ostream& operator<<(std::ostream& ostrm, const Complex& rhs) noexcept {
-  return rhs.WriteTo(ostrm);
+ return rhs.WriteTo(ostrm);
+
 }
 
 //! \brief Форматированный ввод из потока istrm комплексного числа \se Complex::read_from.

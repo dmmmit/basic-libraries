@@ -3,9 +3,21 @@
 
 Complex Complex::operator-() const noexcept { return Complex(-re, -im); }
 
-bool Complex::operator==(const Complex &rhs) const noexcept { return true; }
+bool Complex::operator==(const Complex &rhs) const noexcept {
+    if (re == rhs.re && im == rhs.im) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
-bool Complex::operator!=(const Complex &rhs) const noexcept { return true; }
+bool Complex::operator!=(const Complex &rhs) const noexcept {
+    if (re == rhs.re && im == rhs.im) {
+        return false;
+    } else {
+        return true;
+    }
+}
 
 Complex &Complex::operator+=(const Complex &rhs) noexcept {
     re += rhs.re;
@@ -60,9 +72,9 @@ Complex &Complex::operator/=(const double rhs) {
     return *this;
 }
 
-std::ostream &Complex::WriteTo(std::ostream &ostrm) const noexcept { return ostrm; }
+//std::ostream &Complex::WriteTo(std::ostream &ostrm) const noexcept { return ostrm; }
 
-std::istream &Complex::ReadFrom(std::istream &istrm) noexcept { return istrm; }
+//std::istream &Complex::ReadFrom(std::istream &istrm) noexcept { return istrm; }
 
 
 Complex operator+(const Complex &lhs, const Complex &rhs) noexcept {
@@ -96,8 +108,8 @@ Complex operator*(const Complex &lhs, const Complex &rhs) noexcept {
 }
 
 Complex operator*(const Complex &lhs, const double rhs) noexcept {
-    double res_re= lhs.re * rhs;
-    double res_im =lhs.im * rhs;
+    double res_re = lhs.re * rhs;
+    double res_im = lhs.im * rhs;
     return Complex(res_re, res_im);
 }
 
@@ -117,7 +129,7 @@ Complex operator/(const Complex &lhs, const Complex &rhs) {
 }
 
 Complex operator/(const Complex &lhs, const double rhs) {
-    double res_re = lhs.re / rhs ;
+    double res_re = lhs.re / rhs;
     double res_im = lhs.im / rhs;
 
     return Complex(res_re, res_im);
