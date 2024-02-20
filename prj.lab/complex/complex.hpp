@@ -5,6 +5,7 @@
 
 #include <iostream>
 
+
 //! \class Complex complex.hpp complex/complex.hpp
 //! \brief Комплексные числа.
 struct Complex {
