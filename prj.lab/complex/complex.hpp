@@ -3,7 +3,7 @@
 #ifndef COMPLEX_COMPLEX_H_20191010
 #define COMPLEX_COMPLEX_H_20191010
 
-#include <iosfwd>
+#include <iostream>
 
 //! \class Complex complex.hpp complex/complex.hpp
 //! \brief Комплексные числа.
