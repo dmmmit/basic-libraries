@@ -1,4 +1,4 @@
-CHECK: 20240221-223507
+CHECK: 20240226-012552
 OK: file codeforces.id is correct
 ERROR: folder misis2024s-23-09-urosov-d-i/prj.codeforces is absent
 ERROR: file prj.codeforces/CMakeLists.txt is absent
