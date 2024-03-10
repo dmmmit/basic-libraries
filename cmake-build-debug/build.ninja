@@ -144,6 +144,40 @@ build C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/bin.dbg/test_com
   TARGET_IMPLIB = prj.test\libtest_complex.dll.a
   TARGET_PDB = test_complex.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target test_rational
+
+
+#############################################
+# Order-only phony target for test_rational
+
+build cmake_object_order_depends_target_test_rational: phony || cmake_object_order_depends_target_rational
+
+build prj.test/CMakeFiles/test_rational.dir/test_rational.cpp.obj: CXX_COMPILER__test_rational_unscanned_Debug C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/prj.test/test_rational.cpp || cmake_object_order_depends_target_test_rational
+  DEP_FILE = prj.test\CMakeFiles\test_rational.dir\test_rational.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/prj.lab/rational/..
+  OBJECT_DIR = prj.test\CMakeFiles\test_rational.dir
+  OBJECT_FILE_DIR = prj.test\CMakeFiles\test_rational.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target test_rational
+
+
+#############################################
+# Link the executable C:\Users\dimau\CLionProjects\misis2024s-23-09-urosov-d-i\bin.dbg\test_rational.exe
+
+build C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/bin.dbg/test_rational.exe: CXX_EXECUTABLE_LINKER__test_rational_Debug prj.test/CMakeFiles/test_rational.dir/test_rational.cpp.obj | prj.lab/rational/librational.a || prj.lab/rational/librational.a
+  FLAGS = -g
+  LINK_LIBRARIES = prj.lab/rational/librational.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = prj.test\CMakeFiles\test_rational.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = C:\Users\dimau\CLionProjects\misis2024s-23-09-urosov-d-i\bin.dbg\test_rational.exe
+  TARGET_IMPLIB = prj.test\libtest_rational.dll.a
+  TARGET_PDB = test_rational.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -382,15 +416,125 @@ build prj.lab/complex/CMakeFiles/install/strip.util: CUSTOM_COMMAND prj.lab/comp
 build prj.lab/complex/install/strip: phony prj.lab/complex/CMakeFiles/install/strip.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/prj.lab/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target rational
+
+
+#############################################
+# Order-only phony target for rational
+
+build cmake_object_order_depends_target_rational: phony || prj.lab/rational/CMakeFiles/rational.dir
+
+build prj.lab/rational/CMakeFiles/rational.dir/rational.cpp.obj: CXX_COMPILER__rational_unscanned_Debug C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/prj.lab/rational/rational.cpp || cmake_object_order_depends_target_rational
+  DEP_FILE = prj.lab\rational\CMakeFiles\rational.dir\rational.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/prj.lab/rational/..
+  OBJECT_DIR = prj.lab\rational\CMakeFiles\rational.dir
+  OBJECT_FILE_DIR = prj.lab\rational\CMakeFiles\rational.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target rational
+
+
+#############################################
+# Link the static library prj.lab\rational\librational.a
+
+build prj.lab/rational/librational.a: CXX_STATIC_LIBRARY_LINKER__rational_Debug prj.lab/rational/CMakeFiles/rational.dir/rational.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = prj.lab\rational\CMakeFiles\rational.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = prj.lab\rational\librational.a
+  TARGET_PDB = rational.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build prj.lab/rational/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\dimau\CLionProjects\misis2024s-23-09-urosov-d-i\cmake-build-debug\prj.lab\rational && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build prj.lab/rational/edit_cache: phony prj.lab/rational/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build prj.lab/rational/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\dimau\CLionProjects\misis2024s-23-09-urosov-d-i\cmake-build-debug\prj.lab\rational && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\dimau\CLionProjects\misis2024s-23-09-urosov-d-i -BC:\Users\dimau\CLionProjects\misis2024s-23-09-urosov-d-i\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build prj.lab/rational/rebuild_cache: phony prj.lab/rational/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build prj.lab/rational/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build prj.lab/rational/CMakeFiles/install.util: CUSTOM_COMMAND prj.lab/rational/all
+  COMMAND = cmd.exe /C "cd /D C:\Users\dimau\CLionProjects\misis2024s-23-09-urosov-d-i\cmake-build-debug\prj.lab\rational && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build prj.lab/rational/install: phony prj.lab/rational/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build prj.lab/rational/CMakeFiles/install/local.util: CUSTOM_COMMAND prj.lab/rational/all
+  COMMAND = cmd.exe /C "cd /D C:\Users\dimau\CLionProjects\misis2024s-23-09-urosov-d-i\cmake-build-debug\prj.lab\rational && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build prj.lab/rational/install/local: phony prj.lab/rational/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build prj.lab/rational/CMakeFiles/install/strip.util: CUSTOM_COMMAND prj.lab/rational/all
+  COMMAND = cmd.exe /C "cd /D C:\Users\dimau\CLionProjects\misis2024s-23-09-urosov-d-i\cmake-build-debug\prj.lab\rational && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build prj.lab/rational/install/strip: phony prj.lab/rational/CMakeFiles/install/strip.util
+
+# =============================================================================
 # Target aliases.
 
 build complex: phony prj.lab/complex/libcomplex.a
 
 build libcomplex.a: phony prj.lab/complex/libcomplex.a
 
+build librational.a: phony prj.lab/rational/librational.a
+
+build rational: phony prj.lab/rational/librational.a
+
 build test_complex: phony C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/bin.dbg/test_complex.exe
 
 build test_complex.exe: phony C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/bin.dbg/test_complex.exe
+
+build test_rational: phony C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/bin.dbg/test_rational.exe
+
+build test_rational.exe: phony C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/bin.dbg/test_rational.exe
 
 # =============================================================================
 # Folder targets.
@@ -407,7 +551,7 @@ build all: phony prj.test/all prj.lab/all
 #############################################
 # Folder: C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.lab
 
-build prj.lab/all: phony prj.lab/complex/all
+build prj.lab/all: phony prj.lab/complex/all prj.lab/rational/all
 
 # =============================================================================
 
@@ -419,9 +563,16 @@ build prj.lab/complex/all: phony prj.lab/complex/libcomplex.a
 # =============================================================================
 
 #############################################
+# Folder: C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.lab/rational
+
+build prj.lab/rational/all: phony prj.lab/rational/librational.a
+
+# =============================================================================
+
+#############################################
 # Folder: C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.test
 
-build prj.test/all: phony C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/bin.dbg/test_complex.exe
+build prj.test/all: phony C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/bin.dbg/test_complex.exe C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/bin.dbg/test_rational.exe
 
 # =============================================================================
 # Built-in targets
@@ -430,14 +581,14 @@ build prj.test/all: phony C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/CMakeLists.txt C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/prj.lab/CMakeLists.txt C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/prj.lab/complex/CMakeLists.txt C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/prj.test/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/CMakeLists.txt C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/prj.lab/CMakeLists.txt C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/prj.lab/complex/CMakeLists.txt C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/prj.lab/rational/CMakeLists.txt C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/prj.test/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/CMakeLists.txt C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/prj.lab/CMakeLists.txt C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/prj.lab/complex/CMakeLists.txt C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/prj.test/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake: phony
+build C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/CMakeLists.txt C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/prj.lab/CMakeLists.txt C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/prj.lab/complex/CMakeLists.txt C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/prj.lab/rational/CMakeLists.txt C$:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/prj.test/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake: phony
 
 
 #############################################
