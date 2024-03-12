@@ -11,16 +11,40 @@ Rational::Rational(const std::int64_t num, const std::int64_t den)
   }
 }
 
+Rational& Rational::operator++(){
+    num_ += den_;
+    return *this;
+}
+
+Rational& Rational::operator--(){
+    num_ -= den_;
+    return *this;
+}
+
+Rational& Rational::operator++(int){
+    Rational t(*this);
+    num_ += den_;
+    return t;
+}
+
+Rational& Rational::operator--(int){
+    Rational t(*this);
+    num_ -= den_;
+    return t;
+}
+
+
 int find_GCD(std::int64_t a, std::int64_t b){
     return b ? find_GCD (b, a % b) : a;
 }
 
-Rational reduction(std::int64_t a, std::int64_t b) {
+Rational & reduction(const Rational& rhs) {
+    int a = rhs.num(), b = rhs.den();
     int a_max = std::max(abs(a) , abs(b)), b_min =  std::min(abs(a) , abs(b));
     int sgn = 1;
     if (a * b < 0){ sgn = -1;}
     int delit = find_GCD(a_max, b_min);
-    return Rational(sgn * (num_ / delit), den_/delit)
+    return Rational(sgn * (a / delit), b/delit);
 }
 
 bool Rational::operator==(const Rational& rhs) const noexcept {
@@ -66,8 +90,8 @@ Rational& Rational::operator+=(const Rational& rhs) noexcept {
 
     num_ = (num_ * rhs.den_ + den_ * rhs.num_);
     den_ = (den_ * rhs.den_);
-
-    return *this;
+    auto t = *this;
+    return reduction();
 }
 Rational& Rational::operator-=(const Rational& rhs) noexcept {
     num_ = num_ * rhs.den_ - den_ * rhs.num_;

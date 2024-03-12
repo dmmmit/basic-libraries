@@ -28,6 +28,10 @@ public:
   [[nodiscard]] bool operator>=(const Rational& rhs) const noexcept;
 
   [[nodiscard]] Rational operator-() const noexcept { return { -num_, den_ }; }
+  Rational& operator++();
+  Rational & operator--();
+  Rational & operator++(int);
+  Rational & operator--(int);
 
   Rational & operator+=(const Rational& rhs) noexcept;
   Rational & operator-=(const Rational& rhs) noexcept;
