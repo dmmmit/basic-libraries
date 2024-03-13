@@ -1,12 +1,12 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-/*
+
 #include "doctest.h"
-*/
+
 
 #include <rational/rational.hpp>
 #include "iostream"
 
-/*
+
 TEST_CASE("rational ctor") {
   Rational r_def;
   CHECK(0 == r_def.num());
@@ -17,12 +17,6 @@ TEST_CASE("rational ctor") {
   CHECK(1 == r_int.den());
 
   CHECK_THROWS(void(Rational(1, 0)));
-}*/
-
-
-int main(){
-
-    Rational a(1,2);
-    Rational b(-5,3);
-    std::cout << (a-b) <<std::endl;
 }
+
+

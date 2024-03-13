@@ -157,7 +157,6 @@ std::istream& Rational::ReadFrom(std::istream& istrm) noexcept {
         istrm >> num_ >> com >> den_;
         if (den_ == 0){
             throw std::invalid_argument("Zero denumenator in Rational ctor");
-            den_ = 1;
         }
     }
 
