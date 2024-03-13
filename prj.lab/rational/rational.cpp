@@ -38,13 +38,20 @@ int find_GCD(std::int64_t a, std::int64_t b){
     return b ? find_GCD (b, a % b) : a;
 }
 
-Rational & reduction(const Rational& rhs) {
-    int a = rhs.num(), b = rhs.den();
+
+void Rational::reduction() {
+    int a = num_, b = den_;
     int a_max = std::max(abs(a) , abs(b)), b_min =  std::min(abs(a) , abs(b));
-    int sgn = 1;
-    if (a * b < 0){ sgn = -1;}
+    int sgn;
+    if ((a * b) < 0){
+        sgn = -1;
+    }
+    else{
+        sgn =1;
+    }
     int delit = find_GCD(a_max, b_min);
-    return Rational(sgn * (a / delit), b/delit);
+    num_= sgn * (abs(num_) / delit);
+    den_ = abs(b) / delit;
 }
 
 bool Rational::operator==(const Rational& rhs) const noexcept {
@@ -90,25 +97,27 @@ Rational& Rational::operator+=(const Rational& rhs) noexcept {
 
     num_ = (num_ * rhs.den_ + den_ * rhs.num_);
     den_ = (den_ * rhs.den_);
-    auto t = *this;
-    return reduction();
+    reduction();
+    return *this;
 }
 Rational& Rational::operator-=(const Rational& rhs) noexcept {
     num_ = num_ * rhs.den_ - den_ * rhs.num_;
     den_ = den_ * rhs.den_;
-
+    reduction();
     return *this;
 }
 
 Rational& Rational::operator*=(const Rational& rhs) noexcept {
     num_ = num_ * rhs.num_;
     den_ = den_ * rhs.den_;
+    reduction();
     return *this;
 }
 
 Rational& Rational::operator/=(const Rational& rhs) {
     num_ = num_ * rhs.den_;
     den_=den_ * rhs.num_;
+    reduction();
     return *this; };
 
 Rational& Rational::operator+=(const int64_t rhs) noexcept {return operator+=(Rational(rhs)); };
@@ -133,38 +142,25 @@ Rational operator*(const int64_t lhs, const Rational& rhs) noexcept { return ope
 Rational operator/(const int64_t lhs, const Rational& rhs) { return operator+(rhs, lhs); }
 
 
-/*std::ostream& operator<<(std::ostream& ostrm, const Rational& rhs) noexcept {
-    ostrm << '(' << re << separator << den << ')');
-    return ostrm;
- }
-
-std::istream& operator>>(std::istream& istrm, Rational& rhs) noexcept { return istrm; }*/
 
 std::ostream& Rational::WriteTo(std::ostream& ostrm) const noexcept {
-    ostrm << '(' << num_ << ',' << den_ << ')';
+    ostrm <<  num_ << '/' << den_;
     return ostrm;
 }
 
 std::istream& Rational::ReadFrom(std::istream& istrm) noexcept {
-    char leftBrace(0);
-    char separator(0);
-    char rightBrace(0);
-    std::int64_t num(0);
-    std::int64_t den(0);
-    istrm >> leftBrace >> num >> separator >> den >> rightBrace;
-    if (istrm.good()) {
-        if ((Rational::leftBrace == leftBrace) && (Rational::separator == separator) && (Rational::rightBrace == rightBrace)) {
-            if (den != 0) {
-                num_ = num;
-                den_ = den;
-            }
-            else {
-                istrm.setstate(std::ios_base::failbit);
-            }
-        }
-        else {
-            istrm.setstate(std::ios_base::failbit);
+    char com;
+    if (!istrm.good()) {
+        istrm.setstate(std::ios_base::failbit);
+    } else {
+
+        istrm >> num_ >> com >> den_;
+        if (den_ == 0){
+            throw std::invalid_argument("Zero denumenator in Rational ctor");
+            den_ = 1;
         }
     }
+
+
     return istrm;
 }

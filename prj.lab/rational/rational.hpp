@@ -54,13 +54,12 @@ public:
   //! \param[in,out] istrm - поток
   //! \retval поток
   std::istream& ReadFrom(std::istream& istrm) noexcept;
+  void reduction();
 
 private:
   std::int64_t num_ = 0; //!< числитель
   std::int64_t den_ = 1; //!< знаменатель, > 0
-    static const char leftBrace{ '(' };   //!< левая скобка форматированного представления
-    static const char separator{ '/' };   //!< разделитель форматированного представления
-    static const char rightBrace{ ')' };  //!< правая скобка форматированного представления
+
 };
 
 [[nodiscard]] Rational operator+(const Rational& lhs, const Rational& rhs) noexcept;
@@ -79,7 +78,6 @@ private:
 [[nodiscard]] Rational operator/(const int64_t lhs, const Rational& rhs);
 
 int find_GCD(std::int64_t a, std::int64_t b);
-Rational reduction(std::int64_t a, std::int64_t b);
 
 inline std::ostream& operator<<(std::ostream& ostrm, const Rational& rhs) noexcept {
     return rhs.WriteTo(ostrm);

@@ -72,11 +72,15 @@ Complex &Complex::operator/=(const double rhs) {
     return *this;
 }
 
+//std::ostream &Complex::WriteTo(std::ostream &ostrm) const noexcept {
+ //   ostrm << leftBrace << re << separator << im << rightBrace;
+//    return ostrm;
+//}
+
 std::ostream &Complex::WriteTo(std::ostream &ostrm) const noexcept {
-    ostrm << leftBrace << re << separator << im << rightBrace;
+    ostrm << re << separator << im;
     return ostrm;
 }
-
 std::istream &Complex::ReadFrom(std::istream &istrm) noexcept {
     char leftBrace(0);
     double real(0.0);
@@ -85,8 +89,11 @@ std::istream &Complex::ReadFrom(std::istream &istrm) noexcept {
     char rightBrace(0);
     istrm >> leftBrace >> real >> comma >> imaganary >> rightBrace;
     if (istrm.good()) {
-        if ((Complex::leftBrace == leftBrace) && (Complex::separator == comma)
-            && (Complex::rightBrace == rightBrace)) {
+        //if ((Complex::leftBrace == leftBrace) && (Complex::separator == comma)
+          //  && (Complex::rightBrace == rightBrace)) {
+        if (Complex::separator == comma) {
+
+
             re = real;
             im = imaganary;
         } else {

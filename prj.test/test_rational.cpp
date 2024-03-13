@@ -22,7 +22,7 @@ TEST_CASE("rational ctor") {
 
 int main(){
 
-    Rational a(5,5);
-    Rational b(5,9);
-    std::cout << (a+b) <<std::endl;
+    Rational a(1,2);
+    Rational b(-5,3);
+    std::cout << (a-b) <<std::endl;
 }
