@@ -1,10 +1,11 @@
-CHECK: 20240312-185955
+CHECK: 20240316-075145
+OK: file codeforces.id is correct
 STATUS: lab complex - test-failed
-STATUS: lab complex_io - test-ok
+STATUS: lab complex_io - test-failed
 STATUS: lab complex_m - test-ok
-ERROR: lab rational - test build failed
-ERROR: lab rational_io - test build failed
-ERROR: lab rational_m - test build failed
+STATUS: lab rational - test-failed
+STATUS: lab rational_io - test-failed
+STATUS: lab rational_m - test-ok
 ERROR: lab dynarr - test build failed
 ERROR: lab dynarr_m - test build failed
 ERROR: lab stackarr - test build failed
