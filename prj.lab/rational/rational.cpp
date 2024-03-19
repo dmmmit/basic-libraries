@@ -4,11 +4,15 @@
 
 #include <stdexcept>
 
-Rational::Rational(const std::int64_t num, const std::int64_t den)
-  : num_(num), den_(den) {
-  if (0 == den_) {
+Rational::Rational(const std::int64_t num, const std::int64_t den):
+
+  num_(num), den_(den) {
+
+    if (0 == den_) {
     throw std::invalid_argument("Zero denumenator in Rational ctor");
   }
+    reduction();
+
 }
 
 Rational& Rational::operator++(){
@@ -38,7 +42,6 @@ int find_GCD(std::int64_t a, std::int64_t b){
     return b ? find_GCD (b, a % b) : a;
 }
 
-
 void Rational::reduction() {
     int a = num_, b = den_;
     int a_max = std::max(abs(a) , abs(b)), b_min =  std::min(abs(a) , abs(b));
@@ -53,6 +56,7 @@ void Rational::reduction() {
     num_= sgn * (abs(num_) / delit);
     den_ = abs(b) / delit;
 }
+
 
 bool Rational::operator==(const Rational& rhs) const noexcept {
     auto g = num() * rhs.den_;
@@ -118,7 +122,8 @@ Rational& Rational::operator/=(const Rational& rhs) {
     num_ = num_ * rhs.den_;
     den_=den_ * rhs.num_;
     reduction();
-    return *this; };
+    return *this;
+}
 
 Rational& Rational::operator+=(const int64_t rhs) noexcept {return operator+=(Rational(rhs)); };
 Rational& Rational::operator-=(const int64_t rhs) noexcept { return operator-=(Rational(rhs)); };
@@ -137,9 +142,9 @@ Rational operator*(const Rational& lhs, const int64_t rhs) noexcept { return Rat
 Rational operator/(const Rational& lhs, const int64_t rhs) { return Rational{ lhs } /= rhs; }
 
 Rational operator+(const int64_t lhs, const Rational& rhs) noexcept { return operator+(rhs, lhs); }
-Rational operator-(const int64_t lhs, const Rational& rhs) noexcept { return operator+(rhs, lhs); }
-Rational operator*(const int64_t lhs, const Rational& rhs) noexcept { return operator+(rhs, lhs); }
-Rational operator/(const int64_t lhs, const Rational& rhs) { return operator+(rhs, lhs); }
+Rational operator-(const int64_t lhs, const Rational& rhs) noexcept { return operator-(rhs, lhs); }
+Rational operator*(const int64_t lhs, const Rational& rhs) noexcept { return operator*(rhs, lhs); }
+Rational operator/(const int64_t lhs, const Rational& rhs) { return operator/(rhs, lhs); }
 
 
 
@@ -153,11 +158,12 @@ std::istream& Rational::ReadFrom(std::istream& istrm) noexcept {
     if (!istrm.good()) {
         istrm.setstate(std::ios_base::failbit);
     } else {
-
         istrm >> num_ >> com >> den_;
+
         if (den_ == 0){
             throw std::invalid_argument("Zero denumenator in Rational ctor");
         }
+
     }
 
 
