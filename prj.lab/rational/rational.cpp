@@ -26,7 +26,7 @@ Rational& Rational::operator--(){
 }
 
 Rational& Rational::operator++(int){
-    Rational t(*this);
+    Rational t(num_, den_);
     num_ += den_;
     return t;
 }
@@ -53,7 +53,7 @@ void Rational::reduction() {
         sgn =1;
     }
     int delit = find_GCD(a_max, b_min);
-    num_= sgn * (abs(num_) / delit);
+    num_= sgn * (abs(a) / delit);
     den_ = abs(b) / delit;
 }
 

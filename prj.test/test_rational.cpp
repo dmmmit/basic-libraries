@@ -4,7 +4,7 @@
 
 #include <rational/rational.hpp>
 
-TEST_CASE("rational ctor") {
+TEST_CASE("RATIONAL reduce") {
     Rational r1;
     CHECK(0 == r1.num());
     CHECK(1 == r1.den());
@@ -47,15 +47,7 @@ TEST_CASE("RATIONAL math") {
 }
 
 
-TEST_CASE("RATIONAL ink dek") {
-    Rational a(3, 4);
 
-    CHECK((--a) == Rational(-1, 4));
-    CHECK((a--) == Rational(3, 4));
-    CHECK((++a) == Rational(7, 4));
-    CHECK((a++) == Rational(3, 4));
-
-}
 
 TEST_CASE("RATIONAL bool") {
     Rational a(3, 4);
@@ -81,3 +73,42 @@ TEST_CASE("RATIONAL bool") {
 
 
 }
+
+TEST_CASE("RATIONAL ++ --") {
+    Rational v(3, 4);
+    Rational w(2, 4);
+
+    CHECK((++v) == Rational(7, 4));
+    CHECK((--v) == Rational(3, 4));
+
+
+}
+
+
+TEST_CASE("Rational input/output") {
+    Rational t(1, 2);
+    std::ostringstream output;
+    output << t;
+    CHECK(output.str() == "1/2");
+    Rational m;
+    std::istringstream input("5/3");
+    input >> m;
+    CHECK(m == Rational(5, 3));
+}
+/*
+ *     CHECK((w++) == Rational(1, 2));
+
+    CHECK((w--) == Rational(3, 2));
+
+
+
+}
+
+
+
+
+}
+
+
+
+*/
