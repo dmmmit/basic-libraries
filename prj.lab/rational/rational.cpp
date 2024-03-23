@@ -25,13 +25,13 @@ Rational& Rational::operator--(){
     return *this;
 }
 
-Rational& Rational::operator++(int){
-    Rational t(num_, den_);
+Rational Rational::operator++(int value){
+    Rational t(*this);
     num_ += den_;
     return t;
 }
 
-Rational& Rational::operator--(int){
+Rational Rational::operator--(int value){
     Rational t(*this);
     num_ -= den_;
     return t;
