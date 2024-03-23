@@ -41,9 +41,12 @@ struct Complex {
   //! Два комплексных числа считаются равными, если модуль разности
   //! вещественных и мнимых частей не превосходит eps = 2 * std::numeric_limits<double>::epsilon()
   [[nodiscard]] bool operator==(const Complex& rhs) const noexcept;
+  [[nodiscard]] bool operator==(const double rhs) const noexcept;
 
-  //! \brief Сравнение комплексных чисел на неравенство. \sa Complex::operator==
+
+        //! \brief Сравнение комплексных чисел на неравенство. \sa Complex::operator==
   [[nodiscard]] bool operator!=(const Complex& rhs) const noexcept;
+  [[nodiscard]] bool operator!=(const double rhs) const noexcept;
 
   //! \brief Присваивающее сложение с комплексным числом.
   Complex& operator+=(const Complex& rhs) noexcept;
@@ -123,14 +126,17 @@ struct Complex {
 [[nodiscard]] Complex operator/(const double lhs, const Complex& rhs);
 
 //! \brief Форматированный вввод в потока ostrm комплексного числа \se Complex::write_to.
+
 inline std::ostream& operator<<(std::ostream& ostrm, const Complex& rhs) noexcept {
- return rhs.WriteTo(ostrm);
 
+    return rhs.WriteTo(ostrm);
 }
 
-//! \brief Форматированный ввод из потока istrm комплексного числа \se Complex::read_from.
 inline std::istream& operator>>(std::istream& istrm, Complex& rhs) noexcept {
-  return rhs.ReadFrom(istrm);
+
+    return rhs.ReadFrom(istrm);
 }
+
+
 
 #endif
