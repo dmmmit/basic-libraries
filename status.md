@@ -1,9 +1,5 @@
-CHECK: 20240318-122748
+CHECK: 20240325-005451
 OK: file codeforces.id is correct
-ERROR: folder misis2024s-23-09-urosov-d-i/prj.codeforces is absent
-ERROR: file prj.codeforces/CMakeLists.txt is absent
-OK: CMake generator successed
-OK: CMake build (MSVC x64) successed
 STATUS: lab complex - test-failed
 STATUS: lab complex_io - test-failed
 STATUS: lab complex_m - test-ok
@@ -22,3 +18,5 @@ ERROR: lab queuelst - test build failed
 ERROR: lab queuelst_m - test build failed
 ERROR: lab queuelstpr - test build failed
 ERROR: lab queuelstpr_m - test build failed
+ERROR: lab bitset - test build failed
+ERROR: lab bitset_m - test build failed
