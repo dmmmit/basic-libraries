@@ -131,18 +131,19 @@ void StackArrT<T>::swap(StackArrT<T> &other) {
 template<typename T>
 void StackArrT<T>::merge(StackArrT<T> &other) { // просто склейка двух стэков, без сортировки.
     // если нужно с сотрировкой то сначал сортируем std::sort каждый стэк
-    if (other.empty() || this->empty()) {
-        throw std::out_of_range("First or second stack is empty :(((");
+    if (empty()) {
+        this->swap(other);
     }
-    auto new_data_ = new T[size_ + other.size_];
-    std::copy(data_, data_+size_, new_data_);
-    std::copy(other.data_, other.data_ + other.size_, new_data_ + size_);
-    i_top_ +=other.i_top_;
-    std::swap (new_data_, data_);
-    delete [] new_data_;
-    delete [] other.data_;
-    size_ += other.size_;
-
+    else {
+        auto new_data_ = new T[size_ + other.size_];
+        std::copy(data_, data_ + this->size(), new_data_);
+        std::copy(other.data_, other.data_ + other.size(), new_data_ + this->size());
+        i_top_ += other.i_top_ + 1;
+        std::swap(new_data_, data_);
+        delete[] new_data_;
+        //delete [] other.data_;
+        size_ += other.size_;
+    }
 }
 
 template<typename T>
@@ -161,6 +162,7 @@ StackArrT<T> &StackArrT<T>::operator=(const StackArrT<T> &rhs) noexcept {
     i_top_ = rhs.i_top_;
     size_ = rhs.size_;
     std::copy(rhs.data_, rhs.data_ + rhs.size_, data_);
+return *this;
 }
 
 
@@ -173,6 +175,7 @@ StackArrT<T> &StackArrT<T>::operator=(StackArrT<T> &&other) {
     other.data_ = nullptr;
     other.i_top_ = -1;
     other.size_ = 0;
+    return *this;
     // StackArrT<T>::swap(*this, other);
 
 }
