@@ -47,3 +47,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.lab/rational/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.lab/StackArr/cmake_install.cmake")
+endif()
+
