@@ -138,7 +138,7 @@ void StackArrT<T>::merge(StackArrT<T> &other) { // просто склейка �
         auto new_data_ = new T[size_ + other.size_];
         std::copy(data_, data_ + this->size(), new_data_);
         std::copy(other.data_, other.data_ + other.size(), new_data_ + this->size());
-        i_top_ += other.i_top_ + 1;
+w        i_top_ += other.i_top_ + 1;
         std::swap(new_data_, data_);
         delete[] new_data_;
         //delete [] other.data_;

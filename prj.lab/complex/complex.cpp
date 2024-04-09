@@ -88,18 +88,14 @@ Complex &Complex::operator/=(const double rhs) {
     return ostrm;
 }*/
 
-/*
-inline std::ostream& operator<<(std::ostream& ostrm, const Complex& rhs) noexcept {
-
+inline std::ostream& operator<<(std::ostream& ostrm, const Complex& rhs) {
  return rhs.WriteTo(ostrm);
 }
-
-inline std::istream& operator>>(std::istream& istrm, Complex& rhs) noexcept {
-
+inline std::istream& operator>>(std::istream& istrm, Complex& rhs) {
  return rhs.ReadFrom(istrm);
+
  }
 
-*/
 
 
 

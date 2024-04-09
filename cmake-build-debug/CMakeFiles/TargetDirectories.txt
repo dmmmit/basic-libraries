@@ -7,6 +7,8 @@ C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/CMake
 C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.test/CMakeFiles/test_complex.dir
 C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.test/CMakeFiles/test_rational.dir
 C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.test/CMakeFiles/test_stackarr.dir
+C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.test/CMakeFiles/test_stacklst.dir
+C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.test/CMakeFiles/test_dequeue.dir
 C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.test/CMakeFiles/edit_cache.dir
 C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.test/CMakeFiles/rebuild_cache.dir
 C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.test/CMakeFiles/list_install_components.dir
@@ -40,3 +42,17 @@ C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.l
 C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.lab/StackArr/CMakeFiles/install.dir
 C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.lab/StackArr/CMakeFiles/install/local.dir
 C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.lab/StackArr/CMakeFiles/install/strip.dir
+C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.lab/StackLstT/CMakeFiles/StackLstT.dir
+C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.lab/StackLstT/CMakeFiles/edit_cache.dir
+C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.lab/StackLstT/CMakeFiles/rebuild_cache.dir
+C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.lab/StackLstT/CMakeFiles/list_install_components.dir
+C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.lab/StackLstT/CMakeFiles/install.dir
+C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.lab/StackLstT/CMakeFiles/install/local.dir
+C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.lab/StackLstT/CMakeFiles/install/strip.dir
+C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.lab/Dequeue/CMakeFiles/Dequeue.dir
+C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.lab/Dequeue/CMakeFiles/edit_cache.dir
+C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.lab/Dequeue/CMakeFiles/rebuild_cache.dir
+C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.lab/Dequeue/CMakeFiles/list_install_components.dir
+C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.lab/Dequeue/CMakeFiles/install.dir
+C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.lab/Dequeue/CMakeFiles/install/local.dir
+C:/Users/dimau/CLionProjects/misis2024s-23-09-urosov-d-i/cmake-build-debug/prj.lab/Dequeue/CMakeFiles/install/strip.dir

@@ -126,16 +126,9 @@ struct Complex {
 [[nodiscard]] Complex operator/(const double lhs, const Complex& rhs);
 
 //! \brief Форматированный вввод в потока ostrm комплексного числа \se Complex::write_to.
+inline std::ostream& operator<<(std::ostream& ostrm, const Complex& rhs);
 
-inline std::ostream& operator<<(std::ostream& ostrm, const Complex& rhs) noexcept {
-
-    return rhs.WriteTo(ostrm);
-}
-
-inline std::istream& operator>>(std::istream& istrm, Complex& rhs) noexcept {
-
-    return rhs.ReadFrom(istrm);
-}
+inline std::istream& operator>>(std::istream& istrm, Complex& rhs);
 
 
 
