@@ -1,6 +1,6 @@
-CHECK: 20240406-023124
-STATUS: lab complex - test-failed
-STATUS: lab complex_io - test-failed
+CHECK: 20240410-202423
+ERROR: lab complex - test build failed
+ERROR: lab complex_io - test build failed
 STATUS: lab complex_m - test-ok
 STATUS: lab rational - test-failed
 STATUS: lab rational_io - test-failed
