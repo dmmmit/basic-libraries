@@ -38,7 +38,7 @@ public:
     private:
         size_t index;
         Node* current;
-        const std::vector<Node*>& table;
+        const std::vector<Node *> table;
 
     public:
         size_t index_get() {
@@ -46,11 +46,8 @@ public:
         }
 
 
-        Iterator(size_t i, Node* node, const std::vector<Node*>& tbl) {
-            index = i;
-            current = node;
-            table = tbl;
-        }
+        Iterator(size_t i, Node* node, const std::vector<Node*>& tbl)
+                : index(i), current(node), table(tbl) {}
 
         Iterator& operator++() {
             if (current == nullptr || current->next == nullptr) {
@@ -67,8 +64,9 @@ public:
         }
 
         bool operator!=(const Iterator& other) const {
-            return (index != other.index || current != other.current);
+            return (current != other.current || index != other.index );
         }
+
         std::pair<const KeyType&, ValueType&> operator*() const {
             if (current != nullptr) {
                 return std::pair<const KeyType&, ValueType&>(current->key, current->value);
@@ -89,14 +87,9 @@ public:
     Iterator end() const {
         return Iterator(table.size(), nullptr, table);
     }
+
 };
 
-
-template <typename KeyType, typename ValueType>
-hashTable<KeyType, ValueType>::hashTable(size_t size) {
-    size_ = size;
-    table = std::vector<Node*>(size, nullptr);
-}
 template <typename KeyType, typename ValueType>
 hashTable<KeyType, ValueType>::hashTable() {
     size_ = 60;
@@ -104,10 +97,17 @@ hashTable<KeyType, ValueType>::hashTable() {
 }
 
 template <typename KeyType, typename ValueType>
+hashTable<KeyType, ValueType>::hashTable(size_t size) {
+    size_ = size;
+    table = std::vector<Node*>(size, nullptr);
+}
+
+
+template <typename KeyType, typename ValueType>
 hashTable<KeyType, ValueType>::~hashTable() {
     for (Node* node : table) {
         if (node != nullptr) {
-            deleteNodeSequence(node);
+            delNode(node);
         }
     }
 }
