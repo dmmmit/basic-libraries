@@ -21,7 +21,7 @@ public:
     ~BinarySearchTree();
 
     // Метод для получения корневого узла дерева
-    TreeNode* root();
+    TreeNode *root();
 
     // Метод для добавления узла в дерево
     void add(int data);
@@ -30,7 +30,7 @@ public:
     bool has(int data);
 
     // Метод для поиска узла в дереве
-    TreeNode* find(int data);
+    TreeNode *find(int data);
 
     // Метод для удаления узла из дерева
     void remove(int data);
@@ -46,6 +46,9 @@ public:
     int max();
 
 private:
-    TreeNode* root_;
+    TreeNode *root_;
+
+    void clear_some_node(TreeNode *node);
+
 };
 #endif //MISIS2024S_23_09_UROSOV_D_I_BINARYTREE_H
