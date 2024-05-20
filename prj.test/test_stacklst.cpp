@@ -3,103 +3,103 @@
 
 #include <StackLstT/stackLstT.hpp>
 
-TEST_CASE_TEMPLATE("[stacklstt] - Constructor", T, int, float, double,
+TEST_CASE_TEMPLATE("Constructor", T, int, float, double,
                    long long) {
-    SUBCASE("Default constructor") {
-        StackLstT<T> defCtor;
-        CHECK(defCtor.empty());
+    SUBCASE("Constructor") {
+        StackLstT<T> constr;
+        CHECK(constr.empty());
     }
     SUBCASE("Copy constructor") {
-        StackLstT<T> copyCtor;
-        copyCtor.push(1);
-        copyCtor.push(4);
-        StackLstT<T> copyCtor2(copyCtor);
-        CHECK(!copyCtor2.empty());
-        CHECK(copyCtor2.top() == 4);
-        CHECK(copyCtor2.size() == 2);
+        StackLstT<T> copyconstr;
+        copyconstr.push(1);
+        copyconstr.push(10);
+        StackLstT<T> copyconstr2(copyconstr);
+        CHECK(!copyconstr2.empty());
+        CHECK(copyconstr2.top() == 10);
+        CHECK(copyconstr2.size() == 2);
     }
     SUBCASE("Move constructor") {
-        StackLstT<T> moveCtor;
-        moveCtor.push(1);
-        moveCtor.push(4);
-        StackLstT<T> moveCtor2(std::move(moveCtor));
-        CHECK(!moveCtor2.empty());
-        CHECK(moveCtor2.top() == 4);
-        CHECK(moveCtor2.size() == 2);
+        StackLstT<T> moveconstr;
+        moveconstr.push(1);
+        moveconstr.push(10);
+        StackLstT<T> moveconstr2(std::move(moveconstr));
+        CHECK(!moveconstr2.empty());
+        CHECK(moveconstr2.top() == 10);
+        CHECK(moveconstr2.size() == 2);
     }
-    SUBCASE("Copy constructor with empty list") {
-        StackLstT<T> copyCtor;
-        StackLstT<T> copyCtor2(copyCtor);
-        CHECK(copyCtor2.empty());
+    SUBCASE("Copy constructor") {
+        StackLstT<T> copyconstr;
+        StackLstT<T> copyconstr2(copyconstr);
+        CHECK(copyconstr2.empty());
     }
-    SUBCASE("Initializer list constructor") {
-        StackLstT<T> initListCtor = {1, 2, 6, 4};
-        CHECK(!initListCtor.empty());
-        CHECK(initListCtor.top() == 4);
-        CHECK(initListCtor.size() == 4);
+    SUBCASE("Initializer") {
+        StackLstT<T> initlistconstruc = {1, 2, 4, 4};
+        CHECK(!initlistconstruc.empty());
+        CHECK(initlistconstruc.top() == 4);
+        CHECK(initlistconstruc.size() == 4);
     }
     SUBCASE("Move constructor with empty list") {
-        StackLstT<T> moveCtor;
-        StackLstT<T> moveCtor2(std::move(moveCtor));
-        CHECK(moveCtor2.empty());
+        StackLstT<T> moveconstr;
+        StackLstT<T> moveconstr2(std::move(moveconstr));
+        CHECK(moveconstr2.empty());
     }
-    SUBCASE("Initializer list constructor with empty list") {
-        StackLstT<T> initListCtor{};
-        CHECK(initListCtor.empty());
+    SUBCASE("Initializer list constructor") {
+        StackLstT<T> initlistconstruc{};
+        CHECK(initlistconstruc.empty());
     }
 }
 
-TEST_CASE_TEMPLATE("[stacklstt] - Push, Pop and Top", T, int, float, double,
+TEST_CASE_TEMPLATE("Push, Pop and Top", T, int, float, double,
                    long long) {
     SUBCASE("Push and Pop") {
-        StackLstT<T> s;
-        s.push(3);
-        s.push(1);
-        s.push(2);
-        CHECK(s.top() == 2);
-        CHECK(s.size() == 3);
-        s.pop();
-        s.pop();
-        CHECK(s.top() == 3);
-        CHECK(s.size() == 1);
+        StackLstT<T> sp;
+        sp.push(1);
+        sp.push(2);
+        sp.push(3);
+        CHECK(sp.top() == 3);
+        CHECK(sp.size() == 3);
+        sp.pop();
+        sp.pop();
+        CHECK(sp.top() == 1);
+        CHECK(sp.size() == 1);
     }
-    SUBCASE("Top and Pop with empty stack") {
-        StackLstT<T> s;
-        CHECK_THROWS_WITH(s.pop(), "StackLstT - try pop from empty stack.");
-        CHECK_THROWS_WITH(s.top(), "StackLstT - try get top from empty stack.");
-        s.push(1);
-        CHECK(s.top() == 1);
-        CHECK(!s.empty());
-        s.pop();
-        CHECK_THROWS_WITH(s.pop(), "StackLstT - try pop from empty stack.");
-        CHECK_THROWS_WITH(s.top(), "StackLstT - try get top from empty stack.");
+    SUBCASE("Top and Pop with empstack") {
+        StackLstT<T> sp;
+        CHECK_THROWS_WITH(sp.pop(), "Stack is empty!");
+        CHECK_THROWS_WITH(sp.top(), "Stack is empty!");
+        sp.push(1);
+        CHECK(sp.top() == 1);
+        CHECK(!sp.empty());
+        sp.pop();
+        CHECK_THROWS_WITH(sp.pop(), "Stack is empty!");
+        CHECK_THROWS_WITH(sp.top(), "Stack is empty!");
     }
 }
 
-TEST_CASE_TEMPLATE("[stacklstt] - Compare", T, int, float, double, long long) {
-    SUBCASE("Compare with non-empty stack") {
-        StackLstT<T> c1{2, 3, 1, 4};
-        StackLstT<T> c2{2, 3, 1, 4};
-        StackLstT<T> c3{5, 1, 2, 8};
-        CHECK(c1 == c2);
-        CHECK(c1 != c3);
+TEST_CASE_TEMPLATE("Compare", T, int, float, double, long long) {
+    SUBCASE("Compare with stack") {
+        StackLstT<T> sp1{1, 2, 3, 4};
+        StackLstT<T> sp2{1, 2, 3, 4};
+        StackLstT<T> sp3{5, 6, 7, 8};
+        CHECK(sp1 == sp2);
+        CHECK(sp1 != sp3);
     }
-    SUBCASE("Compare with empty stack") {
-        StackLstT<T> c1{2, 3, 1, 4};
+    SUBCASE("Compare with empstack") {
+        StackLstT<T> sp1{1, 2, 3, 4};
         StackLstT<T> empty1;
         StackLstT<T> empty2;
         CHECK(empty1 == empty2);
-        CHECK(empty1 != c1);
+        CHECK(empty1 != sp1);
     }
 }
 
-TEST_CASE_TEMPLATE("[stackarrt] - Swap and merge", T, int, float, double,
+TEST_CASE_TEMPLATE("Swap and merge", T, int, float, double,
                    long long) {
     SUBCASE("Swap") {
-        StackLstT<T> s1{2, 3, 1, 4};
-        StackLstT<T> s1Cp{2, 3, 1, 4};
-        StackLstT<T> s2{5, 1, 2, 8};
-        StackLstT<T> s2Cp{5, 1, 2, 8};
+        StackLstT<T> s1{1, 2, 3, 4};
+        StackLstT<T> s1Cp{1, 2, 3, 4};
+        StackLstT<T> s2{5, 6, 7, 8};
+        StackLstT<T> s2Cp{5, 6, 7, 8};
         StackLstT<T> s3;
         s1.swap(s2);
         CHECK(s1 == s2Cp);
@@ -115,7 +115,7 @@ TEST_CASE_TEMPLATE("[stackarrt] - Swap and merge", T, int, float, double,
         s1.merge(s2);
         CHECK(s1 == merged);
     }
-    SUBCASE("Merge with empty stack") {
+    SUBCASE("Merge with empstack") {
         StackLstT<T> s1{1, 2, 3, 4};
         StackLstT<T> s1Copy{1, 2, 3, 4};
         StackLstT<T> s2;
@@ -123,8 +123,8 @@ TEST_CASE_TEMPLATE("[stackarrt] - Swap and merge", T, int, float, double,
         CHECK(s1 == s1Copy);
 
         StackLstT<T> s3;
-        StackLstT<T> s4 = {5, 6, 7, 8};
-        StackLstT<T> s3merged = {5, 6, 7, 8};
+        StackLstT<T> s4 = {1, 2, 3, 4};
+        StackLstT<T> s3merged = {1, 2, 3, 4};
         s3.merge(s4);
         CHECK(s3 == s3merged);
     }
@@ -132,12 +132,12 @@ TEST_CASE_TEMPLATE("[stackarrt] - Swap and merge", T, int, float, double,
 
 TEST_CASE_TEMPLATE("[stacklstt] - Assignment", T, int, float, double,
                    long long) {
-    StackLstT<T> s1{2, 3, 1, 4};
-    StackLstT<T> s2{5, 1, 2, 8};
+    StackLstT<T> s1{11, 12, 13, 14};
+    StackLstT<T> s2{8, 9, 10, 11};
     s1 = s2;
     CHECK(s1 == s2);
     StackLstT<T> s3;
-    StackLstT<T> s4 = {5, 1, 2, 8};
+    StackLstT<T> s4 = {1, 2, 3, 4};
     s4 = s3;
     CHECK(s4.empty());
 }
