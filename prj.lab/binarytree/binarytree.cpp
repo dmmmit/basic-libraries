@@ -1,6 +1,3 @@
-//
-// Created by dimau on 20.05.2024.
-//
 
 #include <binarytree/binarytree.hpp>
 #include <stdexcept>
