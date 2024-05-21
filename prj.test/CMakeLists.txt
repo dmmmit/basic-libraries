@@ -19,3 +19,6 @@ target_link_libraries(test_hashtable hashtable)
 
 add_executable(test_binarytree test_binarytree.cpp)
 target_link_libraries(test_binarytree binarytree)
+
+add_executable(test_finaltest test_finaltest.cpp)
+target_link_libraries(test_finaltest finaltest)
